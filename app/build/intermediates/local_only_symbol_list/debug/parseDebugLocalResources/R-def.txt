@@ -1,0 +1,27 @@
+R_DEF: Internal format may change without notice
+local
+attr colorBackground
+color black
+color blue_700
+color blue_900
+color grey_300
+color grey_800
+color purple_500
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id buttonClear
+id buttonDivide
+id buttonPercent
+id buttonSign
+id displayTextView
+id gridLayout
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style CalculatorButton
+style CalculatorButtonOperation
+style Theme.Calculator
+xml backup_rules
+xml data_extraction_rules
