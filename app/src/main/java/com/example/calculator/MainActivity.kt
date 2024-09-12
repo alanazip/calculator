@@ -18,13 +18,10 @@ class MainActivity : AppCompatActivity() {
 
         displayTextView = findViewById(R.id.displayTextView)
 
-        // Definindo listeners para cada botão
         findViewById<Button>(R.id.buttonClear).setOnClickListener { clear() }
         findViewById<Button>(R.id.buttonSign).setOnClickListener { changeSign() }
         findViewById<Button>(R.id.buttonPercent).setOnClickListener { calculatePercentage() }
         findViewById<Button>(R.id.buttonDivide).setOnClickListener { setOperation("÷") }
-
-        // Adicione listeners para os demais botões...
     }
 
     private fun clear() {
