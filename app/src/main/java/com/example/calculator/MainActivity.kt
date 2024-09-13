@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
         calculationTextView = findViewById(R.id.calculationTextView) // Novo TextView
         displayTextView = findViewById(R.id.displayTextView)
 
-        // Botões de números
         findViewById<Button>(R.id.button0).setOnClickListener { appendNumber("0") }
         findViewById<Button>(R.id.button1).setOnClickListener { appendNumber("1") }
         findViewById<Button>(R.id.button2).setOnClickListener { appendNumber("2") }
@@ -33,13 +32,11 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.button9).setOnClickListener { appendNumber("9") }
         findViewById<Button>(R.id.buttonDecimal).setOnClickListener { appendNumber(".") }
 
-        // Botões de operações
         findViewById<Button>(R.id.buttonAdd).setOnClickListener { setOperation("+") }
         findViewById<Button>(R.id.buttonSubtract).setOnClickListener { setOperation("−") }
         findViewById<Button>(R.id.buttonMultiply).setOnClickListener { setOperation("×") }
         findViewById<Button>(R.id.buttonDivide).setOnClickListener { setOperation("÷") }
 
-        // Botões de funcionalidades
         findViewById<Button>(R.id.buttonClear).setOnClickListener { clear() }
         findViewById<Button>(R.id.buttonEquals).setOnClickListener { calculateResult() }
     }
