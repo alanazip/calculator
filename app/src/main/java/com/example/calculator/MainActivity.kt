@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 class MainActivity : AppCompatActivity() {
 
     private lateinit var displayTextView: TextView
+    private lateinit var calculationTextView: TextView
     private var currentNumber = ""
     private var operation = ""
     private var previousNumber = ""
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        calculationTextView = findViewById(R.id.calculationTextView) // Novo TextView
         displayTextView = findViewById(R.id.displayTextView)
 
         // Botões de números
@@ -39,8 +41,6 @@ class MainActivity : AppCompatActivity() {
 
         // Botões de funcionalidades
         findViewById<Button>(R.id.buttonClear).setOnClickListener { clear() }
-        findViewById<Button>(R.id.buttonSign).setOnClickListener { changeSign() }
-        findViewById<Button>(R.id.buttonPercent).setOnClickListener { calculatePercentage() }
         findViewById<Button>(R.id.buttonEquals).setOnClickListener { calculateResult() }
     }
 
@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         if (number == "." && currentNumber.contains(".")) return // Evita múltiplos pontos decimais
         currentNumber += number
         displayTextView.text = currentNumber
+        updateCalculationView(currentNumber)
     }
 
     private fun clear() {
@@ -55,6 +56,7 @@ class MainActivity : AppCompatActivity() {
         previousNumber = ""
         operation = ""
         displayTextView.text = "0"
+        calculationTextView.text = ""
     }
 
     private fun changeSign() {
@@ -65,6 +67,7 @@ class MainActivity : AppCompatActivity() {
                 "-$currentNumber"
             }
             displayTextView.text = currentNumber
+            updateCalculationView(currentNumber)
         }
     }
 
@@ -73,6 +76,7 @@ class MainActivity : AppCompatActivity() {
             val num = currentNumber.toDouble() / 100
             currentNumber = num.toString()
             displayTextView.text = currentNumber
+            updateCalculationView(currentNumber)
         }
     }
 
@@ -82,6 +86,7 @@ class MainActivity : AppCompatActivity() {
             currentNumber = ""
             operation = op
             displayTextView.text = op
+            updateCalculationView("$previousNumber $operation")
         }
     }
 
@@ -97,8 +102,13 @@ class MainActivity : AppCompatActivity() {
                 else -> 0.0
             }
             displayTextView.text = result.toString()
+            updateCalculationView("$previousNumber $operation $currentNumber = $result")
             previousNumber = result.toString()
             currentNumber = ""
         }
+    }
+
+    private fun updateCalculationView(input: String) {
+        calculationTextView.text = input
     }
 }

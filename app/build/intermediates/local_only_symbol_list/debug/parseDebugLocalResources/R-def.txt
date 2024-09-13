@@ -10,6 +10,7 @@ color purple_500
 color white
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable rounded_button
 id button0
 id button1
 id button2
@@ -21,14 +22,16 @@ id button7
 id button8
 id button9
 id buttonAdd
+id buttonAllClear
 id buttonClear
+id buttonCloseParenthesis
 id buttonDecimal
 id buttonDivide
 id buttonEquals
 id buttonMultiply
-id buttonPercent
-id buttonSign
+id buttonOpenParenthesis
 id buttonSubtract
+id calculationTextView
 id displayTextView
 layout activity_main
 mipmap ic_launcher
