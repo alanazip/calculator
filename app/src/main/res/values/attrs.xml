@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Definição de um atributo personalizado para colorBackground -->
     <attr name="colorBackground" format="color" />
 </resources>
